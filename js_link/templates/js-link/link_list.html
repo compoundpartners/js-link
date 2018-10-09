@@ -1,11 +1,12 @@
 {% load cms_tags %}
 
-{#    <div class="{{ object.get_classes }}">#}
-    <div class="col-sm-3 col-xs-6">
+<div class="row link-list-container">
+    <div class="col-md-4">
         {% if object.title %}
-            <div class="heading">{{ object.title }}</div>
+            <div class="link-list-title">{{ object.title }}</div>
         {% endif %}
         {% for plugin in object.child_plugin_instances %}
             {% render_plugin plugin %}
         {% endfor %}
     </div>
+</div>

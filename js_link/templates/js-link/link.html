@@ -1,15 +1,23 @@
-{% load cms_tags %}
+{% load cms_tags thumbnail %}
 
-{#    <div class="{{ object.get_classes }}">#}
-{#    <div class="col-sm-3 col-xs-6">#}
-    <div class="">
-{#        {% if object.text %}#}
-{#            <div class="heading">{{ object.text }}</div>#}
-{#        {% endif %}#}
-        {% if object.text %}
-            <div class="heading">{{ object.text }}</div>
-        {% endif %}
-        {% if object.url %}
-            <div class="heading">{{ object.url }}</div>
+<div class="row">
+    <div class="col-md-2 link-list-image image">
+        {% if object.icon %}
+            {% thumbnail object.icon "25x20" crop="center" as im %}
+            <a href="{{ object.url }}">
+                <img src="{{ im.url }}" alt="{{ object.icon_alt }}"
+                class="img-responsive media-object">
+            </a>
         {% endif %}
     </div>
+    <div class="col-md-5 link-list-text text">
+    {% if object.text %}
+        {{ object.text }}
+    {% endif %}
+    </div>
+    <div class="col-md-5 link-list-url url">
+    {% if object.url %}
+        <a href="{{ object.url }}">{{ object.url }}</a>
+    {% endif %}
+    </div>
+</div>
