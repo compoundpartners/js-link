@@ -1,0 +1,15 @@
+{% load cms_tags %}
+
+{#    <div class="{{ object.get_classes }}">#}
+{#    <div class="col-sm-3 col-xs-6">#}
+    <div class="">
+{#        {% if object.text %}#}
+{#            <div class="heading">{{ object.text }}</div>#}
+{#        {% endif %}#}
+        {% if object.text %}
+            <div class="heading">{{ object.text }}</div>
+        {% endif %}
+        {% if object.url %}
+            <div class="heading">{{ object.url }}</div>
+        {% endif %}
+    </div>
