@@ -12,7 +12,6 @@ class JSLinkListPlugin(CMSPluginBase):
     admin_preview = False
     allow_children = True
     child_classes = ['JSLinkPlugin',]
-    # Link List (new plugin - https://compoundpartners.atlassian.net/browse/GAT01-99)
 
     def render(self, context, instance, placeholder):
         context.update({
@@ -36,9 +35,3 @@ class JSLinkPlugin(CMSPluginBase):
             'placeholder': placeholder,
         })
         return context
-
-# It will be a parent plugin container "Link List"
-# The plugins in this are limited to a new: "Link" plugin
-    # icon
-    # link text
-    # link url
