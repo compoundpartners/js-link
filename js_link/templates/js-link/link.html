@@ -1,12 +1,10 @@
-{% load cms_tags thumbnail %}
+{% load cms_tags djangocms_icon_tags %}
 
 <div class="row">
     <div class="col-md-2 link-list-image image">
         {% if object.icon %}
-            {% thumbnail object.icon "25x20" crop="center" as im %}
             <a href="{{ object.url }}">
-                <img src="{{ im.url }}" alt="{{ object.icon_alt }}"
-                class="img-responsive media-object">
+                <i class="{{ object.icon|iconset_from_class }} {{ object.icon }} aria-hidden="true"></i>
             </a>
         {% endif %}
     </div>

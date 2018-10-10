@@ -1,6 +1,7 @@
 from django.db import models
 from cms.models import CMSPlugin
-from filer.fields.image import FilerImageField
+
+from djangocms_icon.fields import Icon
 
 from django.utils.html import strip_tags
 from django.utils.text import Truncator
@@ -16,7 +17,7 @@ class JSLinkList(CMSPlugin):
 
 class JSLink(CMSPlugin):
 
-    icon = FilerImageField(null=True, blank=True, related_name="icon")
+    icon = Icon(blank=False, default='fa-')
     text = models.CharField(max_length=255, blank=True)
     url = models.CharField(max_length=255)
 
