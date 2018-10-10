@@ -18,7 +18,10 @@ class JSLink(CMSPlugin):
 
     icon = FilerImageField(null=True, blank=True, related_name="icon")
     text = models.CharField(max_length=255, blank=True)
-    url = models.CharField(max_length=255, blank=True)
+    url = models.CharField(max_length=255)
 
     def __str__(self):
-        return Truncator(strip_tags(self.text)).words(3, truncate="...")
+        if self.text:
+            return Truncator(strip_tags(self.text)).words(3, truncate="...")
+        elif self.url:
+            return strip_tags(self.url)
