@@ -8,12 +8,11 @@
             </a>
         {% endif %}
     </div>
-    <div class="col-md-5 link-list-text text">
+    <div class="col-md-5 link-list-text link-list-url">
     {% if object.text %}
-        {{ object.text }}
-    {% endif %}
-    </div>
-    <div class="col-md-5 link-list-url url">
+        <a href="{{ object.url }}">{{ object.text }}</a>
+    {% else %}
         <a href="{{ object.url }}">{{ object.url }}</a>
+    {% endif %}
     </div>
 </div>
