@@ -1,18 +1,22 @@
-{% load cms_tags djangocms_icon_tags %}
+{% load cms_tags thumbnail djangocms_icon_tags %}
 
-<div class="row">
-    <div class="col-md-2 link-list-image image">
-        {% if object.icon %}
-            <a href="{{ object.url }}">
-                <i class="{{ object.icon|iconset_from_class }} {{ object.icon }} aria-hidden="true"></i>
-            </a>
-        {% endif %}
-    </div>
-    <div class="col-md-5 link-list-text link-list-url">
-    {% if object.text %}
-        <a href="{{ object.url }}">{{ object.text }}</a>
-    {% else %}
-        <a href="{{ object.url }}">{{ object.url }}</a>
+<li>
+  <a href="{{ object.url }}">
+
+    {% if object.icon %}
+      <i class="{{ object.icon|iconset_from_class }} {{ object.icon }}" aria-hidden="true"></i>
     {% endif %}
-    </div>
-</div>
+
+    {% if object.image %}
+      {% thumbnail object.image "40x40" crop="center" as im %}
+      <img src="{{ im.url }}" alt="{{ object.image_alt }}" class="img-responsive media-object">
+    {% endif %}
+
+    {% if object.text %}
+      {{ object.text }}
+    {% else %}
+      {{ object.url }}
+    {% endif %}
+
+  </a>
+</li>
