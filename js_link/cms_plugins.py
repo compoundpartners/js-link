@@ -26,6 +26,7 @@ class JSLinkPlugin(CMSPluginBase):
     model = JSLink
     name = _('Link')
     render_template = 'js-link/link.html'
+    parent_classes = ['JSLinkListPlugin',]
     admin_preview = False
     allow_children = False
 
