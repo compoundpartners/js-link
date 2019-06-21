@@ -30,6 +30,13 @@ class JSLinkPlugin(CMSPluginBase):
     admin_preview = False
     allow_children = False
 
+    fields = [
+        'icon',
+        ('image', 'svg'),
+        'text',
+        'url',
+    ]
+
     def render(self, context, instance, placeholder):
         context.update({
             'object': instance,

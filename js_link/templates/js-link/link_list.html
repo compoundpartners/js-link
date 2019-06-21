@@ -1,6 +1,6 @@
 {% load cms_tags %}
 
-<div class="row link-list-container">
+<div {% if instance.attributes %}{{ instance.attributes_str }}{% else %}class="row link-list-container"{% endif %}>
     <div class="col-md-4">
         {% if object.title %}
             <div class="link-list-title">{{ object.title }}</div>

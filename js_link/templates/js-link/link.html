@@ -10,6 +10,8 @@
     {% if object.image %}
       {% thumbnail object.image "40x40" crop="center" as im %}
       <img src="{{ im.url }}" alt="{{ object.image_alt }}" class="img-responsive media-object">
+    {% elif object.svg %}
+      <img src="{{ object.svg.url }}" class="img-responsive media-object">
     {% endif %}
 
     {% if object.text %}
