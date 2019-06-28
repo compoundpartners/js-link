@@ -32,7 +32,7 @@ class LayoutMixin():
 @plugin_pool.register_plugin
 class JSLinkListPlugin(LayoutMixin, CMSPluginBase):
     model = JSLinkList
-    TEMPLATE_NAME = 'js-link/link_list_%s.html'
+    TEMPLATE_NAME = 'js-link/link_list__%s.html'
     name = _('Link List')
     render_template = 'js-link/link_list.html'
     admin_preview = False
