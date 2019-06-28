@@ -9,10 +9,17 @@ from djangocms_attributes_field.fields import AttributesField
 from django.utils.html import strip_tags
 from django.utils.text import Truncator
 
+from django.utils.translation import ugettext_lazy as _
 
 class JSLinkList(CMSPlugin):
 
     title = models.CharField(max_length=255, blank=True)
+    layout = models.CharField(
+        blank=True,
+        default='',
+        max_length=60,
+        verbose_name=_('layout')
+    )
     attributes = AttributesField(verbose_name='Attributes', blank=True)
 
     def __str__(self):
