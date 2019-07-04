@@ -1,7 +1,7 @@
 {% load cms_tags thumbnail djangocms_icon_tags %}
 
 <li>
-  <a href="{{ object.url }}">
+  <a href="{{ object.url }}" {% if instance.attributes %}{{ instance.attributes_str }}{% endif %}>
 
     {% if object.icon %}
       <i class="{{ object.icon|iconset_from_class }} {{ object.icon }}" aria-hidden="true"></i>

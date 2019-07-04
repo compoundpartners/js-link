@@ -68,6 +68,7 @@ class JSLinkPlugin(CMSPluginBase):
         ('image', 'svg'),
         'text',
         'url',
+        'attributes',
     ]
 
     def render(self, context, instance, placeholder):

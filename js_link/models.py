@@ -33,6 +33,7 @@ class JSLink(CMSPlugin):
     text = models.CharField(max_length=255, blank=True)
     url = models.CharField(max_length=255)
     svg = FilerFileField(verbose_name='SVG Image', blank=True, null=True, on_delete=models.SET_NULL, related_name='+')
+    attributes = AttributesField(verbose_name='Attributes', blank=True)
 
     def copy_relations(self, oldinstance):
         self.image = oldinstance.image
