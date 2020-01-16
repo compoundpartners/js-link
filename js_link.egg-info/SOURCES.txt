@@ -4,6 +4,8 @@ README.rst
 setup.py
 js_link/__init__.py
 js_link/cms_plugins.py
+js_link/constants.py
+js_link/forms.py
 js_link/models.py
 js_link.egg-info/PKG-INFO
 js_link.egg-info/SOURCES.txt
@@ -15,6 +17,9 @@ js_link/migrations/0002_auto_20181010_0528.py
 js_link/migrations/0003_remove_jslink_icon.py
 js_link/migrations/0004_jslink_icon.py
 js_link/migrations/0005_jslink_image.py
+js_link/migrations/0006_auto_20190621_1547.py
+js_link/migrations/0007_jslinklist_layout.py
+js_link/migrations/0008_jslink_attributes.py
 js_link/migrations/__init__.py
 js_link/templates/js-link/link.html
 js_link/templates/js-link/link_list.html
