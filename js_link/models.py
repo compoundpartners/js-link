@@ -36,7 +36,7 @@ class JSLink(CMSPlugin):
         related_name="image"
     )
     text = models.CharField(max_length=255, blank=True)
-    url = models.CharField(max_length=255)
+    url = models.CharField(max_length=255, blank=True, null=True)
     svg = FilerFileField(verbose_name='SVG Image', blank=True, null=True, on_delete=models.SET_NULL, related_name='+')
     attributes = AttributesField(verbose_name='Attributes', blank=True)
 
