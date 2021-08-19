@@ -55,9 +55,10 @@ class JSLinkListPlugin(LayoutMixin, CMSPluginBase):
 
 
 @plugin_pool.register_plugin
-class JSLinkPlugin(CMSPluginBase):
+class JSLinkPlugin(LayoutMixin, CMSPluginBase):
     model = JSLink
     name = _('Link')
+    TEMPLATE_NAME = 'js-link/link__%s.html'
     render_template = 'js-link/link.html'
     parent_classes = ['JSLinkListPlugin',]
     admin_preview = False
@@ -71,9 +72,6 @@ class JSLinkPlugin(CMSPluginBase):
         'attributes',
     ]
 
-    def render(self, context, instance, placeholder):
-        context.update({
-            'object': instance,
-            'placeholder': placeholder,
-        })
-        return context
+    def get_layout(self, context, instance, placeholder):
+        instance, _ = instance.parent.get_plugin_instance()
+        return instance.layout
