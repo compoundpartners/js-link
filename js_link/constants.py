@@ -7,3 +7,9 @@ LINK_LIST_LAYOUTS = getattr(
     'LINK_LIST_LAYOUTS',
     (),
 )
+
+LINK_LAYOUTS = getattr(
+    settings,
+    'LINK_LAYOUTS',
+    (),
+)

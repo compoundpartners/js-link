@@ -28,6 +28,12 @@ class JSLinkList(CMSPlugin):
 
 class JSLink(CMSPlugin):
 
+    layout = models.CharField(
+        blank=True,
+        default='',
+        max_length=60,
+        verbose_name=_('layout')
+    )
     icon = Icon(blank=False, default='fa-')
     image = FilerImageField(
         on_delete=models.SET_NULL,
@@ -37,6 +43,7 @@ class JSLink(CMSPlugin):
     )
     text = models.CharField(max_length=255, blank=True)
     url = models.CharField(max_length=255, blank=True, null=True)
+    file = FilerFileField(verbose_name='File', blank=True, null=True, on_delete=models.SET_NULL, related_name='+')
     svg = FilerFileField(verbose_name='SVG Image', blank=True, null=True, on_delete=models.SET_NULL, related_name='+')
     attributes = AttributesField(verbose_name='Attributes', blank=True)
 
